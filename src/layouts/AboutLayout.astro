@@ -1,0 +1,264 @@
+
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <BaseHead title={title} description={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      :global(html) {
+        scroll-behavior: smooth;
+      }
+
+      :global(body) {
+        margin: 0;
+        background: #f4f7fb;
+        color: #172b45;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .about-main {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      :global(.about-container) {
+        width: min(1120px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      :global(.about-hero) {
+        padding: 90px 0;
+        color: white;
+        background: linear-gradient(125deg, #10243e, #173f65 65%, #087e91);
+      }
+
+      :global(.about-hero-inner) {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        gap: 55px;
+      }
+
+      :global(.about-kicker) {
+        color: #64d9e6;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      :global(.about-hero h1) {
+        margin: 18px 0;
+        font-size: clamp(38px, 6vw, 64px);
+        line-height: 1.08;
+        color: white;
+      }
+
+      :global(.about-hero h2) {
+        margin: 0 0 22px;
+        font-size: clamp(18px, 2.5vw, 24px);
+        color: #bcecf0;
+        font-weight: 500;
+      }
+
+      :global(.about-hero p) {
+        max-width: 650px;
+        color: #d5e2ed;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      :global(.about-photo) {
+        min-height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      :global(.about-photo img) {
+        width: 280px;
+        height: 320px;
+        object-fit: cover;
+        border: 5px solid rgba(255,255,255,.2);
+        border-radius: 24px;
+        box-shadow: 0 25px 60px rgba(0,0,0,.3);
+      }
+
+      :global(.about-placeholder) {
+        width: 260px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 24px;
+        background: rgba(255,255,255,.08);
+        color: #bcecf0;
+        font-size: 80px;
+      }
+
+      :global(.about-section) {
+        padding: 75px 0;
+      }
+
+      :global(.about-section.white) {
+        background: white;
+      }
+
+      :global(.about-section h2) {
+        margin: 0 0 22px;
+        color: #153653;
+        font-size: 30px;
+      }
+
+      :global(.about-section p) {
+        color: #52647a;
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      :global(.about-grid) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      :global(.about-card) {
+        padding: 28px;
+        background: white;
+        border: 1px solid #e4eaf1;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(20,50,80,.05);
+      }
+
+      :global(.about-card h3) {
+        margin-top: 0;
+        color: #126c89;
+        font-size: 19px;
+      }
+
+      :global(.about-card p) {
+        margin-bottom: 0;
+        font-size: 14px;
+      }
+
+      :global(.about-timeline) {
+        border-left: 3px solid #1596a8;
+        margin: 30px 0 0 10px;
+        padding-left: 28px;
+      }
+
+      :global(.about-job) {
+        position: relative;
+        margin-bottom: 32px;
+      }
+
+      :global(.about-job::before) {
+        content: "";
+        position: absolute;
+        left: -37px;
+        top: 5px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #1596a8;
+      }
+
+      :global(.about-job h3) {
+        margin: 0 0 7px;
+        color: #173f65;
+      }
+
+      :global(.about-job strong) {
+        color: #1596a8;
+      }
+
+      :global(.about-skills) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 25px;
+      }
+
+      :global(.about-skill) {
+        padding: 12px 18px;
+        color: #174866;
+        background: #e8f4f7;
+        border: 1px solid #d3e9ed;
+        border-radius: 9px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      :global(.about-quote) {
+        padding: 45px;
+        border-radius: 18px;
+        background: #102b46;
+        color: white;
+        font-size: 21px;
+        line-height: 1.7;
+        text-align: center;
+      }
+
+      @media (max-width: 750px) {
+        :global(.about-hero-inner) {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+
+        :global(.about-hero) {
+          padding: 55px 0;
+        }
+
+        :global(.about-photo) {
+          min-height: auto;
+        }
+
+        :global(.about-photo img) {
+          width: 220px;
+          height: 250px;
+        }
+
+        :global(.about-grid) {
+          grid-template-columns: 1fr;
+        }
+
+        :global(.about-section) {
+          padding: 48px 0;
+        }
+
+        :global(.about-quote) {
+          padding: 25px;
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header />
+    <main class="about-main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
