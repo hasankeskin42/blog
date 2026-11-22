@@ -1,17 +1,41 @@
-astro
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+import brandLogo from '../assets/logo.webp';
 ---
 
 <header>
+	<div class="top-strip">
+		<div class="top-inner">
+			<span>Elektrik · Elektronik · Endüstriyel Otomasyon</span>
+			<span class="top-note">Saha deneyiminden teknik paylaşımlar</span>
+		</div>
+	</div>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2>
+			<a href="/" class="brand-link" aria-label={SITE_TITLE}>
+				<img
+					class="brand-logo"
+					src={brandLogo.src}
+					alt="HASTUĞ Engineering - Electrical, Electronics, Automation"
+					width="1024"
+					height="707"
+				/>
+			</a>
+		</h2>
 		<div class="internal-links">
 			<HeaderLink href="/">Ana Sayfa</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">Hakkımda</HeaderLink>
 		</div>
+		<a
+			class="header-cta"
+			href="https://www.linkedin.com/in/hasan-keskin-53504515a/"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Bağlantı kur <span aria-hidden="true">↗</span>
+		</a>
 		<div class="social-links">
 			<a href="https://www.facebook.com/hasankeskin42" target="_blank" rel="noopener">
 				<span class="sr-only">Facebook</span>
@@ -49,40 +73,160 @@ import HeaderLink from './HeaderLink.astro';
 <style>
 	header {
 		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: #fff;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.top-strip {
+		background: #0daeb5;
+		color: #fff;
+		font-size: 0.76rem;
+		font-weight: 700;
+	}
+	.top-inner {
+		display: flex;
+		width: min(var(--page-width), calc(100% - 2.5rem));
+		min-height: 31px;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0 auto;
+		gap: 1rem;
+	}
+	.top-note {
+		font-weight: 400;
 	}
 	h2 {
 		margin: 0;
-		font-size: 1em;
+		font-size: 1rem;
+		letter-spacing: 0.07em;
+		white-space: nowrap;
 	}
 	h2 a,
 	h2 a.active {
 		text-decoration: none;
 	}
+	.brand-link {
+		display: block;
+		padding: 0;
+		border: 0;
+	}
+	.brand-logo {
+		display: block;
+		width: 340px;
+		height: auto;
+	}
 	nav {
+		width: min(var(--page-width), calc(100% - 2.5rem));
+		min-height: 76px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		gap: 1rem;
+		margin: 0 auto;
 	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
+	.internal-links {
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
 	}
-	nav a.active {
+	.internal-links a {
+		padding: 0.6rem 0.85rem;
+		color: rgb(var(--gray-dark));
+		border-radius: 999px;
 		text-decoration: none;
-		border-bottom-color: var(--accent);
+		font-size: 0.92rem;
+		transition: background 160ms ease, color 160ms ease;
+	}
+	.internal-links a:hover,
+	.internal-links a.active {
+		background: #e8f4f7;
+		color: var(--accent-dark);
+	}
+	.header-cta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.7rem 1rem;
+		border-radius: 6px;
+		background: #0daeb5;
+		color: #fff;
+		font-size: 0.88rem;
+		font-weight: 700;
+		text-decoration: none;
+		white-space: nowrap;
+		transition: background 160ms ease;
+	}
+	.header-cta:hover {
+		background: #087e91;
+		color: #fff;
 	}
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
-	@media (max-width: 720px) {
+	.social-links {
+		gap: 0.5rem;
+	}
+	.social-links a {
+		align-items: center;
+		justify-content: center;
+		padding: 0.45rem;
+		color: rgb(var(--gray));
+		border-radius: 50%;
+		transition: background 160ms ease, color 160ms ease;
+	}
+	.social-links a:hover {
+		background: #e8f4f7;
+		color: var(--accent-dark);
+	}
+	.social-links svg {
+		width: 20px;
+		height: 20px;
+	}
+	@media (max-width: 900px) {
 		.social-links {
 			display: none;
+		}
+	}
+	@media (max-width: 720px) {
+		.top-inner,
+		nav {
+			width: calc(100% - 2rem);
+		}
+		nav {
+			min-height: 0;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 0.25rem 0.75rem;
+			padding: 0.8rem 0 0;
+		}
+		.top-inner {
+			min-height: 30px;
+			font-size: 0.68rem;
+		}
+		.top-note {
+			display: none;
+		}
+		h2 {
+			font-size: 0.9rem;
+		}
+		.brand-logo {
+			width: 300px;
+		}
+		.header-cta {
+			padding: 0.55rem 0.75rem;
+			font-size: 0.82rem;
+		}
+		.internal-links {
+			order: 1;
+			width: 100%;
+			justify-content: center;
+			gap: 0.1rem;
+			margin-top: 0.35rem;
+			border-top: 1px solid rgb(var(--gray-light));
+		}
+		.internal-links a {
+			padding: 0.45rem 0.75rem;
+			font-size: 0.88rem;
 		}
 	}
 </style>

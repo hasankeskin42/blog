@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="720" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#143548"/>
+      <stop offset="1" stop-color="#087E91"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="242" y1="35" x2="502" y2="364" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9F1F1"/>
+      <stop offset="1" stop-color="#B9CED0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h720v400H0z"/>
+  <path stroke="#D6EEEE" stroke-opacity=".12" stroke-width="2" d="M0 80h720M0 160h720M0 240h720M0 320h720M80 0v400m80-400v400m80-400v400m80-400v400m80-400v400m80-400v400m80-400v400"/>
+  <path fill="#0D2635" fill-opacity=".56" d="M0 300h720v100H0z"/>
+  <path fill="url(#panel)" stroke="#E5F4F4" stroke-width="5" d="M211 39h297v319H211z"/>
+  <path fill="#173B4B" d="M233 61h252v78H233z"/>
+  <path fill="#102634" d="M249 76h219v48H249z"/>
+  <path stroke="#45D6CB" stroke-width="5" d="M264 111h42l18-24 23 23 20-18 25 19 22-24 21 24h18"/>
+  <circle cx="272" cy="177" r="18" fill="#D3E5E5" stroke="#547581" stroke-width="4"/>
+  <circle cx="272" cy="177" r="7" fill="#37C8BD"/>
+  <path fill="#D3E5E5" stroke="#547581" stroke-width="4" d="M316 159h59v36h-59z"/>
+  <path fill="#E8B954" d="m347 165-15 16h12l-5 9 19-17h-13l2-8Z"/>
+  <path fill="#D3E5E5" stroke="#547581" stroke-width="4" d="M391 159h70v36h-70z"/>
+  <path stroke="#426674" stroke-width="4" d="M249 223h218m-218 20h218m-218 20h136"/>
+  <path fill="#3BC9BD" d="M250 290h24v24h-24zM286 290h24v24h-24zM322 290h24v24h-24z"/>
+  <path fill="#E8B954" d="M376 290h24v24h-24z"/>
+  <path fill="#102A39" d="M532 202h81v110h-81z"/>
+  <circle cx="572" cy="241" r="25" stroke="#B6D7D9" stroke-width="5"/>
+  <path stroke="#E9B955" stroke-linecap="round" stroke-width="5" d="m572 241 12-15"/>
+  <path fill="#49D4C8" d="M552 277h40v10h-40z"/>
+  <path stroke="#91D8D6" stroke-linecap="round" stroke-width="5" d="M145 329h425"/>
+</svg>

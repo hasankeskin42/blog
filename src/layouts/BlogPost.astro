@@ -11,7 +11,7 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="tr">
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
@@ -40,7 +40,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				margin-bottom: 1em;
 				padding: 1em 0;
 				text-align: center;
-				line-height: 1;
+				line-height: 1.2;
 			}
 			.title h1 {
 				margin: 0 0 0.5em 0;
@@ -48,9 +48,35 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.date {
 				margin-bottom: 0.5em;
 				color: rgb(var(--gray));
+				font-size: 0.92rem;
 			}
 			.last-updated-on {
 				font-style: italic;
+			}
+			.prose :global(h2) {
+				margin-top: 2rem;
+				font-size: clamp(1.6rem, 3vw, 2rem);
+			}
+			.prose :global(h3) {
+				margin-top: 1.5rem;
+				font-size: 1.35rem;
+			}
+			.prose :global(img) {
+				border-radius: 14px;
+			}
+			.prose :global(pre) {
+				overflow-x: auto;
+				background: #10243e;
+				color: #f4f7fb;
+			}
+			@media (max-width: 720px) {
+				.prose {
+					max-width: 100%;
+					padding: 0.75rem;
+				}
+				.title {
+					padding: 0.75rem 0;
+				}
 			}
 		</style>
 	</head>
@@ -68,7 +94,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							<FormattedDate date={pubDate} />
 							{updatedDate && (
 								<div class="last-updated-on">
-									Last updated on <FormattedDate date={updatedDate} />
+									Son güncelleme: <FormattedDate date={updatedDate} />
 								</div>
 							)}
 						</div>

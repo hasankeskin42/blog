@@ -39,22 +39,35 @@ const today = new Date();
 </footer>
 <style>
 	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		padding: 2rem 1rem 2.5rem;
+		background: #fff;
 		color: rgb(var(--gray));
 		text-align: center;
+		border-top: 1px solid rgb(var(--gray-light));
+		font-size: 0.92rem;
 	}
 	.social-links {
 		display: flex;
 		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
+		gap: 0.75rem;
+		margin-top: 0.75rem;
 	}
 	.social-links a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.45rem;
 		text-decoration: none;
 		color: rgb(var(--gray));
+		border-radius: 50%;
+		transition: background 160ms ease, color 160ms ease;
 	}
 	.social-links a:hover {
+		background: #e8f4f7;
 		color: rgb(var(--gray-dark));
+	}
+	.social-links svg {
+		width: 20px;
+		height: 20px;
 	}
 </style>
