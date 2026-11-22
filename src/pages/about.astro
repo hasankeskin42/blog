@@ -1,157 +1,167 @@
-
 ---
 import AboutLayout from '../layouts/AboutLayout.astro';
-
 ---
 
 <AboutLayout
 	title="HASAN KESKİN | Hakkımda"
 	description="Hasan Keskin - Elektrik-Elektronik Mühendisi. Endüstriyel otomasyon, PLC programlama, elektrik bakım ve kontrol sistemleri üzerine mesleki deneyimler ve teknik paylaşımlar."
-	
 >
-	<h1>Merhaba, Ben Hasan Keskin</h1>
+	<section class="about-hero">
+		<div class="about-container about-hero-inner">
+			<div>
+				<p class="about-kicker">Elektrik · Elektronik · Endüstriyel Otomasyon</p>
+				<h1>Merhaba, ben Hasan Keskin</h1>
+				<h2>Elektrik-Elektronik Mühendisi | Endüstriyel Otomasyon</h2>
+				<p>
+					Teknolojiyi yalnızca takip eden değil, anlamaya, geliştirmeye ve sahada
+					uygulanabilir çözümlere dönüştürmeye çalışan bir Elektrik-Elektronik Mühendisiyim.
+				</p>
+				<p>
+					Mesleki yolculuğum; elektrik tesisatı ve pano montajından elektronik kart
+					tasarımına, endüstriyel otomasyon sistemlerinden elektrik bakım ve onarım
+					süreçlerine uzanan farklı deneyimlerle şekillendi. Akademik eğitimimi saha
+					tecrübemle birleştirerek teknik problemlere çözüm odaklı yaklaşmayı benimsiyorum.
+				</p>
+				<a class="about-cta" href="/blog/">Teknik yazıları incele <span aria-hidden="true">→</span></a>
+			</div>
+			<div class="about-photo">
+				<div class="about-profile-card">
+					<strong>2021’den beri</strong>
+					<span>Endüstriyel tesislerde elektrik bakım ve onarım süreçlerinde saha deneyimi.</span>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<h2>Elektrik-Elektronik Mühendisi | Endüstriyel Otomasyon</h2>
+	<section class="about-section">
+		<div class="about-container">
+			<p class="about-kicker">Saha deneyimi</p>
+			<h2>Mesleki yolculuğum</h2>
+			<p>
+				Kariyerim boyunca elektrik, elektronik, otomasyon ve endüstriyel üretim
+				alanlarında farklı görevler üstlendim.
+			</p>
+			<div class="about-grid">
+				<article class="about-card">
+					<h3>Elektrik ve elektronik</h3>
+					<p>Elektrik tesisatı, pano montajı, elektronik kart tasarımı ve bakım-onarım uygulamaları.</p>
+				</article>
+				<article class="about-card">
+					<h3>Endüstriyel otomasyon</h3>
+					<p>PLC tabanlı kontrol sistemleri, makine otomasyonu, motor sürücüleri ve HMI uygulamaları.</p>
+				</article>
+				<article class="about-card">
+					<h3>Üretim teknolojileri</h3>
+					<p>Otomasyonlu akıllı depo sistemleri, otomatik süt sağım sistemleri ve endüstriyel üretim süreçleri.</p>
+				</article>
+				<article class="about-card">
+					<h3>Elektrik bakım</h3>
+					<p>Arıza analizi, bakım planlaması, sistem sürekliliği ve teknik problemlerin giderilmesi.</p>
+				</article>
+			</div>
+			<div class="about-card about-current-role">
+				<h3>Mevcut görevim</h3>
+				<p>
+					2021 yılından itibaren Doğuş Çay bünyesinde Elektrik Bakım Formeni olarak görev
+					yapıyor, endüstriyel tesislerde elektrik bakım ve onarım çalışmalarımı sürdürüyorum.
+				</p>
+			</div>
+		</div>
+	</section>
 
-	<p>
-		Teknolojiyi yalnızca takip eden değil, anlamaya, geliştirmeye
-		ve sahada uygulanabilir çözümlere dönüştürmeye çalışan bir
-		Elektrik-Elektronik Mühendisiyim.
-	</p>
+	<section class="about-section white">
+		<div class="about-container">
+			<p class="about-kicker">Akademik altyapı</p>
+			<h2>Eğitim bilgilerim</h2>
+			<div class="about-grid">
+				<article class="about-card">
+					<h3>Aksaray Üniversitesi</h3>
+					<p>Elektrik-Elektronik Mühendisliği · 2020</p>
+				</article>
+				<article class="about-card">
+					<h3>Selçuk Üniversitesi</h3>
+					<p>Elektrik İletim ve Dağıtım · 2016</p>
+				</article>
+				<article class="about-card">
+					<h3>Selçuklu Mesleki ve Teknik Anadolu Lisesi</h3>
+					<p>Elektrik ve Otomasyon · 2014</p>
+				</article>
+			</div>
+		</div>
+	</section>
 
-	<p>
-		Mesleki yolculuğum; elektrik tesisatı ve pano montajından
-		elektronik kart tasarımına, endüstriyel otomasyon sistemlerinden
-		elektrik bakım ve onarım süreçlerine uzanan farklı deneyimlerle
-		şekillendi. Akademik eğitimimi saha tecrübemle birleştirerek
-		teknik problemlere çözüm odaklı yaklaşmayı benimsiyorum.
-	</p>
+	<section class="about-section">
+		<div class="about-container">
+			<p class="about-kicker">Teknik araçlar</p>
+			<h2>Teknik yetkinliklerim</h2>
+			<p>
+				Mesleki çalışmalarımda farklı otomasyon platformları, mühendislik yazılımları ve
+				elektronik tasarım araçlarından faydalanıyorum.
+			</p>
+			<div class="about-skills">
+				<span class="about-skill">Siemens TIA Portal (S7)</span>
+				<span class="about-skill">Allen-Bradley</span>
+				<span class="about-skill">Delta PLC</span>
+				<span class="about-skill">HMI ve sürücüler</span>
+				<span class="about-skill">EPLAN</span>
+				<span class="about-skill">AutoCAD</span>
+				<span class="about-skill">Multisim</span>
+				<span class="about-skill">Proteus</span>
+				<span class="about-skill">EasySoft</span>
+				<span class="about-skill">ISPSoft</span>
+			</div>
+		</div>
+	</section>
 
-	<h2>Mesleki Yolculuğum</h2>
+	<section class="about-section white">
+		<div class="about-container">
+			<p class="about-kicker">Sürekli gelişim</p>
+			<h2>Sertifika ve eğitimler</h2>
+			<div class="about-grid">
+				<article class="about-card">
+					<h3>Aksaray Üniversitesi</h3>
+					<p>Özel İngilizce Kursu · 2018</p>
+				</article>
+				<article class="about-card">
+					<h3>TSE</h3>
+					<p>TS EN ISO 50001 Enerji Yönetim Sistemi Kursu ve Uygulama Eğitimi · 2022</p>
+				</article>
+			</div>
+		</div>
+	</section>
 
-	<p>
-		Kariyerim boyunca elektrik, elektronik, otomasyon ve endüstriyel
-		üretim alanlarında farklı görevler üstlendim.
-	</p>
+	<section class="about-section">
+		<div class="about-container">
+			<p class="about-kicker">Paylaşım alanları</p>
+			<h2>Bu platformda neler paylaşıyorum?</h2>
+			<p>
+				Bu web sitesini yalnızca kişisel bir blog olarak değil, öğrendiklerimi,
+				araştırmalarımı ve mesleki deneyimlerimi paylaşabileceğim bir mühendislik platformu
+				olarak görüyorum.
+			</p>
+			<div class="about-skills">
+				<span class="about-skill">PLC programlama ve endüstriyel otomasyon</span>
+				<span class="about-skill">Siemens TIA Portal ve HMI</span>
+				<span class="about-skill">Elektrik bakım ve arıza giderme</span>
+				<span class="about-skill">Motor sürücüleri ve kontrol sistemleri</span>
+				<span class="about-skill">Elektrik projelendirme ve pano uygulamaları</span>
+				<span class="about-skill">Üretim teknolojileri ve mühendislik</span>
+			</div>
+		</div>
+	</section>
 
-	<ul>
-		<li>
-			<strong>Elektrik ve Elektronik:</strong>
-			Elektrik tesisatı, pano montajı, elektronik kart tasarımı
-			ve bakım-onarım uygulamaları.
-		</li>
-		<li>
-			<strong>Endüstriyel Otomasyon:</strong>
-			PLC tabanlı kontrol sistemleri, makine otomasyonu,
-			motor sürücüleri ve HMI uygulamaları.
-		</li>
-		<li>
-			<strong>Üretim Teknolojileri:</strong>
-			Otomasyonlu akıllı depo sistemleri, otomatik süt sağım
-			sistemleri ve endüstriyel üretim süreçleri.
-		</li>
-		<li>
-			<strong>Elektrik Bakım:</strong>
-			Arıza analizi, bakım planlaması, sistem sürekliliği
-			ve teknik problemlerin giderilmesi.
-		</li>
-	</ul>
-
-	<p>
-		2021 yılından itibaren Doğuş Çay bünyesinde Elektrik Bakım
-		Formeni olarak görev yapıyor, endüstriyel tesislerde elektrik
-		bakım ve onarım süreçlerinde çalışmalarımı sürdürüyorum.
-	</p>
-
-	<h2>Eğitim Bilgilerim</h2>
-
-	<ul>
-		<li>
-			<strong>Aksaray Üniversitesi</strong> -
-			Elektrik-Elektronik Mühendisliği (2020)
-		</li>
-		<li>
-			<strong>Selçuk Üniversitesi</strong> -
-			Elektrik İletim ve Dağıtım (2016)
-		</li>
-		<li>
-			<strong>Selçuklu Mesleki ve Teknik Anadolu Lisesi</strong> -
-			Elektrik ve Otomasyon (2014)
-		</li>
-	</ul>
-
-	<h2>Teknik Yetkinliklerim</h2>
-
-	<p>
-		Mesleki çalışmalarımda farklı otomasyon platformları,
-		mühendislik yazılımları ve elektronik tasarım araçlarından
-		faydalanıyorum.
-	</p>
-
-	<ul>
-		<li><strong>PLC:</strong> Siemens TIA Portal (S7), Allen-Bradley, Delta</li>
-		<li><strong>HMI ve Sürücüler:</strong> Siemens, Delta</li>
-		<li><strong>Elektrik Projelendirme:</strong> EPLAN, AutoCAD</li>
-		<li><strong>Elektronik Tasarım:</strong> Multisim, Proteus</li>
-		<li><strong>Otomasyon Yazılımları:</strong> EasySoft, ISPSoft</li>
-	</ul>
-
-	<h2>Sertifika ve Eğitimler</h2>
-
-	<ul>
-		<li>Aksaray Üniversitesi - Özel İngilizce Kursu (2018)</li>
-		<li>
-			TSE - TS EN ISO 50001 Enerji Yönetim Sistemi
-			Kursu ve Uygulama Eğitimi (2022)
-		</li>
-	</ul>
-
-	<h2>Bu Platformda Neler Paylaşıyorum?</h2>
-
-	<p>
-		Bu web sitesini yalnızca kişisel bir blog olarak değil,
-		aynı zamanda öğrendiklerimi, araştırmalarımı ve mesleki
-		deneyimlerimi paylaşabileceğim bir mühendislik platformu
-		olarak görüyorum.
-	</p>
-
-	<p>Burada özellikle şu konulara odaklanıyorum:</p>
-
-	<ul>
-		<li>PLC programlama ve endüstriyel otomasyon</li>
-		<li>Siemens TIA Portal ve HMI uygulamaları</li>
-		<li>Elektrik bakım ve arıza giderme yöntemleri</li>
-		<li>Motor sürücüleri ve kontrol sistemleri</li>
-		<li>Elektrik projelendirme ve pano uygulamaları</li>
-		<li>Üretim teknolojileri ve mühendislik araştırmaları</li>
-	</ul>
-
-	<h2>Mühendislik Yaklaşımım</h2>
-
-	<p>
-		Mühendisliğin sürekli öğrenmeyi, araştırmayı ve gelişmeyi
-		gerektirdiğine inanıyorum. Her teknik problemin arkasında
-		öğrenilecek yeni bir bilgi ve geliştirilebilecek bir çözüm
-		olduğunu düşünüyorum.
-	</p>
-
-	<p>
-		Benim için mühendislik, yalnızca çalışan bir sistem kurmak
-		değil; o sistemin nasıl çalıştığını anlamak, daha iyisini
-		araştırmak ve karşılaşılan problemlere kalıcı çözümler
-		üretebilmektir.
-	</p>
-
-	<p>
-		Bilginin paylaşıldıkça değer kazandığına inanıyorum.
-		Deneyimlerimi ve teknik çalışmalarımı bu platformda
-		paylaşmaktan mutluluk duyuyorum.
-	</p>
-
-	<h2>Hoş Geldiniz!</h2>
-
-	<p>
-		Elektrik, elektronik ve otomasyon dünyasına ilgi duyan
-		herkese faydalı olması dileğiyle...
-	</p>
+	<section class="about-section white">
+		<div class="about-container">
+			<div class="about-quote">
+				<h2>Mühendislik yaklaşımım</h2>
+				<p>
+					Mühendisliğin sürekli öğrenmeyi, araştırmayı ve gelişmeyi gerektirdiğine
+					inanıyorum. Benim için mühendislik; çalışan bir sistem kurmanın yanında, o
+					sistemin nasıl çalıştığını anlamak ve karşılaşılan problemlere kalıcı çözümler
+					üretebilmektir.
+				</p>
+				<p>Bilginin paylaşıldıkça değer kazandığına inanıyorum. Hoş geldiniz!</p>
+			</div>
+		</div>
+	</section>
 </AboutLayout>

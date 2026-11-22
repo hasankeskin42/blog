@@ -3,6 +3,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import technologyBackdrop from '../assets/industrial-automation-hero.svg';
 
 interface Props {
   title: string;
@@ -31,12 +32,13 @@ const { title, description } = Astro.props;
         margin: 0;
         background: #f4f7fb;
         color: #172b45;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: var(--font-atkinson), Arial, Helvetica, sans-serif;
       }
 
       .about-main {
         width: 100%;
         overflow: hidden;
+        padding: 0;
       }
 
       :global(.about-container) {
@@ -45,9 +47,15 @@ const { title, description } = Astro.props;
       }
 
       :global(.about-hero) {
+        position: relative;
+        overflow: hidden;
         padding: 90px 0;
         color: white;
-        background: linear-gradient(125deg, #10243e, #173f65 65%, #087e91);
+        background:
+          linear-gradient(90deg, rgba(8, 24, 38, 0.96), rgba(11, 42, 59, 0.78)),
+          var(--about-backdrop);
+        background-position: center;
+        background-size: cover;
       }
 
       :global(.about-hero-inner) {
@@ -86,6 +94,23 @@ const { title, description } = Astro.props;
         line-height: 1.8;
       }
 
+      :global(.about-hero .about-cta) {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 12px;
+        padding: 12px 18px;
+        border-radius: 6px;
+        background: #0daeb5;
+        color: white;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      :global(.about-hero .about-cta:hover) {
+        background: #087e91;
+      }
+
       :global(.about-photo) {
         min-height: 320px;
         display: flex;
@@ -115,8 +140,34 @@ const { title, description } = Astro.props;
         font-size: 80px;
       }
 
+      :global(.about-profile-card) {
+        width: min(100%, 290px);
+        padding: 28px;
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 18px;
+        background: rgba(7, 23, 36, .72);
+        box-shadow: 0 25px 60px rgba(0,0,0,.24);
+        backdrop-filter: blur(8px);
+      }
+
+      :global(.about-profile-card strong) {
+        display: block;
+        color: #76e0e8;
+        font-size: 34px;
+      }
+
+      :global(.about-profile-card span) {
+        display: block;
+        margin-top: 6px;
+        color: #d5e2ed;
+        line-height: 1.6;
+      }
+
       :global(.about-section) {
         padding: 75px 0;
+        background-color: #f4f7fb;
+        background-image: radial-gradient(rgba(8, 126, 145, .09) .8px, transparent .8px);
+        background-size: 22px 22px;
       }
 
       :global(.about-section.white) {
@@ -137,7 +188,7 @@ const { title, description } = Astro.props;
 
       :global(.about-grid) {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
         gap: 20px;
         margin-top: 30px;
       }
@@ -159,6 +210,14 @@ const { title, description } = Astro.props;
       :global(.about-card p) {
         margin-bottom: 0;
         font-size: 14px;
+      }
+
+      :global(.about-card ul) {
+        margin: 0;
+        padding-left: 20px;
+        color: #52647a;
+        font-size: 14px;
+        line-height: 1.8;
       }
 
       :global(.about-timeline) {
@@ -219,6 +278,11 @@ const { title, description } = Astro.props;
         text-align: center;
       }
 
+      :global(.about-quote p) {
+        margin: 0;
+        color: #d5e2ed;
+      }
+
       @media (max-width: 750px) {
         :global(.about-hero-inner) {
           grid-template-columns: 1fr;
@@ -256,7 +320,7 @@ const { title, description } = Astro.props;
 
   <body>
     <Header />
-    <main class="about-main">
+    <main class="about-main" style={`--about-backdrop: url("${technologyBackdrop.src}")`}>
       <slot />
     </main>
     <Footer />

@@ -182,51 +182,84 @@ import brandLogo from '../assets/logo.webp';
 		width: 20px;
 		height: 20px;
 	}
-	@media (max-width: 900px) {
-		.social-links {
-			display: none;
-		}
-	}
 	@media (max-width: 720px) {
 		.top-inner,
 		nav {
 			width: calc(100% - 2rem);
 		}
-		nav {
-			min-height: 0;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			gap: 0.25rem 0.75rem;
-			padding: 0.8rem 0 0;
-		}
 		.top-inner {
-			min-height: 30px;
+			min-height: 0;
+			flex-direction: column;
+			justify-content: center;
+			gap: 0;
+			padding: 0.35rem 0;
 			font-size: 0.68rem;
+			text-align: center;
 		}
 		.top-note {
-			display: none;
+			display: block;
+		}
+		nav {
+			min-height: 0;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) auto;
+			grid-template-areas:
+				"brand social"
+				"links links";
+			justify-content: space-between;
+			gap: 0.5rem;
+			padding: 0.75rem 0 0;
+		}
+		nav h2 {
+			grid-area: brand;
 		}
 		h2 {
 			font-size: 0.9rem;
 		}
 		.brand-logo {
-			width: 300px;
+			width: min(340px, calc(100vw - 180px));
+		}
+		.social-links {
+			grid-area: social;
+			gap: 0.1rem;
+		}
+		.social-links a {
+			padding: 0.25rem;
+		}
+		.social-links svg {
+			width: 18px;
+			height: 18px;
 		}
 		.header-cta {
-			padding: 0.55rem 0.75rem;
-			font-size: 0.82rem;
+			display: none;
 		}
 		.internal-links {
-			order: 1;
+			grid-area: links;
 			width: 100%;
 			justify-content: center;
 			gap: 0.1rem;
 			margin-top: 0.35rem;
+			padding-top: 0.35rem;
 			border-top: 1px solid rgb(var(--gray-light));
 		}
 		.internal-links a {
 			padding: 0.45rem 0.75rem;
 			font-size: 0.88rem;
+		}
+	}
+	@media (max-width: 420px) {
+		.brand-logo {
+			width: min(300px, calc(100vw - 165px));
+		}
+		.social-links {
+			gap: 0;
+		}
+		.social-links a {
+			padding: 0.18rem;
+		}
+		.social-links svg {
+			width: 16px;
+			height: 16px;
 		}
 	}
 </style>

@@ -1,15 +1,19 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import automationBackdrop from '../../assets/industrial-automation-hero.svg';
+import plcIllustration from '../../assets/plc-automation.svg';
+import maintenanceIllustration from '../../assets/electrical-maintenance.svg';
+import designIllustration from '../../assets/engineering-design.svg';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+const illustrations = [plcIllustration, maintenanceIllustration, designIllustration];
 ---
 
 <!doctype html>
@@ -17,35 +21,71 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 		<style>
-			main {
-				padding-top: 3.5rem;
+			.blog-hero {
+				position: relative;
+				display: flex;
+				min-height: 270px;
+				align-items: center;
+				overflow: hidden;
+				background: #10243e;
+				color: #fff;
+				isolation: isolate;
 			}
-			.page-heading {
-				max-width: 720px;
-				margin-bottom: 2rem;
+			.blog-hero img {
+				position: absolute;
+				z-index: -1;
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 0;
+				object-fit: cover;
+				object-position: center 45%;
 			}
-			.page-heading .eyebrow {
-				margin: 0 0 0.6rem;
-				color: var(--accent-dark);
-				font-size: 0.85rem;
+			.blog-hero::before {
+				position: absolute;
+				z-index: -1;
+				inset: 0;
+				background: linear-gradient(90deg, rgba(7, 20, 32, .94), rgba(7, 20, 32, .55));
+				content: '';
+			}
+			.blog-hero-inner {
+				width: min(var(--page-width), calc(100% - 2.5rem));
+				margin: 0 auto;
+				padding: 3rem 0;
+			}
+			.blog-hero .eyebrow {
+				margin: 0 0 .65rem;
+				color: #66e0dc;
+				font-size: .8rem;
 				font-weight: 700;
-				letter-spacing: 0.12em;
+				letter-spacing: .14em;
 				text-transform: uppercase;
 			}
-			.page-heading h1 {
-				margin: 0 0 0.75rem;
-				color: #153653;
-				letter-spacing: -0.035em;
+			.blog-hero h1 {
+				margin: 0 0 .65rem;
+				color: #fff;
+				font-size: clamp(2.2rem, 5vw, 3.5rem);
 			}
-			.page-heading p {
+			.blog-hero p:last-child {
+				max-width: 640px;
 				margin: 0;
-				color: rgb(var(--gray));
+				color: #d7e5ef;
+			}
+			.blog-main {
+				width: 100%;
+				max-width: none;
+				padding: 3rem 0 4rem;
+				background-color: #f3f6f7;
+				background-image: radial-gradient(rgba(8, 126, 145, .09) .8px, transparent .8px);
+				background-size: 22px 22px;
 			}
 			.post-list {
+				width: min(var(--page-width), calc(100% - 2.5rem));
 				display: grid;
 				grid-template-columns: repeat(2, minmax(0, 1fr));
 				gap: 1.25rem;
 				margin: 0;
+				margin-inline: auto;
 				padding: 0;
 				list-style: none;
 			}
@@ -110,33 +150,40 @@ const posts = (await getCollection('blog')).sort(
 				.post-list {
 					grid-template-columns: 1fr;
 				}
+				.blog-hero {
+					min-height: 230px;
+				}
 			}
 		</style>
 	</head>
 	<body>
 		<Header />
-		<main>
-			<header class="page-heading">
+		<section class="blog-hero">
+			<img src={automationBackdrop.src} alt="" width="1600" height="760" />
+			<div class="blog-hero-inner">
 				<p class="eyebrow">Teknik notlar ve deneyimler</p>
 				<h1>Blog</h1>
-				<p>Elektrik, elektronik ve endüstriyel otomasyon üzerine yazılar.</p>
-			</header>
+				<p>Elektrik, elektronik ve endüstriyel otomasyon üzerine saha odaklı teknik paylaşımlar.</p>
+			</div>
+		</section>
+		<main class="blog-main">
 			<ul class="post-list">
-				{posts.map((post) => (
-					<li class="post-card">
-						<a href={`/blog/${post.id}/`}>
-							{post.data.heroImage && (
-								<Image width={720} height={360} src={post.data.heroImage} alt="" />
-							)}
-							<div class="post-content">
-								<FormattedDate date={post.data.pubDate} />
-								<h2>{post.data.title}</h2>
-								<p>{post.data.description}</p>
-								<span class="read-more">Yazıyı oku <span aria-hidden="true">→</span></span>
-							</div>
-						</a>
-					</li>
-				))}
+				{posts.map((post, index) => {
+					const illustration = illustrations[index % illustrations.length];
+					return (
+						<li class="post-card">
+							<a href={`/blog/${post.id}/`}>
+								<img src={illustration.src} alt="" width="720" height="400" loading="lazy" />
+								<div class="post-content">
+									<FormattedDate date={post.data.pubDate} />
+									<h2>{post.data.title}</h2>
+									<p>{post.data.description}</p>
+									<span class="read-more">Yazıyı oku <span aria-hidden="true">→</span></span>
+								</div>
+							</a>
+						</li>
+					);
+				})}
 			</ul>
 		</main>
 		<Footer />
